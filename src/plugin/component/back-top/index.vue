@@ -2,8 +2,8 @@
     <transition 
         name="fade"
         appear
-        enter-active-class="animated fadeIn"
-        leave-active-class="animated fadeOut"
+        enter-active-class="animated fadeIn faster"
+        leave-active-class="animated fadeOut faster"
         >
         <div
             v-if="visible"
