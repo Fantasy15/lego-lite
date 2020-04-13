@@ -1,9 +1,19 @@
 <template>
-    <div
-        v-if="visible"
-        class="app-back-top"
-        @click="scorllTop">
-    </div>
+    <transition 
+        name="fade"
+        appear
+        enter-active-class="animated fadeIn"
+        leave-active-class="animated fadeOut"
+        >
+        <div
+            v-if="visible"
+            class="app-back-top"
+            @click="scrollToTop">
+            <slot>
+                <div class="app-back-top-content">UP</div>
+            </slot>
+        </div>
+    </transition>
 </template>
 
 <script>
@@ -21,6 +31,12 @@ export default {
     },
     data() {
         this.scrollEvent = null;
+        this.transitionProps = {
+            props: {
+                appear: true,
+                css: false,
+            }
+        }
         return {
             visible: false,
         }
@@ -33,6 +49,7 @@ export default {
     mounted() {
         this.$nextTick(() => {
             addEventListener(this.scrollTarget, 'scroll', this.handleScroll);
+            this.handleScroll();
         })
     },
     beforeDestroy() {
@@ -46,13 +63,16 @@ export default {
             const scrollTop = getScroll(scrollTarget, true);
             this.visible = scrollTop > visibilityHeight;
         },
-        scrollTop() {
-
+        scrollToTop() {
+            this.scrollTarget.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            })
         }
     },
 }
 </script>
 
-<style>
+<style lang="less">
 @import './index.less';
 </style>
