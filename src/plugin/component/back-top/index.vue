@@ -18,6 +18,7 @@
 
 <script>
 import getScroll from '../_util/getScroll';
+import scrollTo from '../_util/scrollTo';
 const addEventListener = require('add-dom-event-listener');
 
 export default {
@@ -64,10 +65,9 @@ export default {
             this.visible = scrollTop > visibilityHeight;
         },
         scrollToTop() {
-            this.scrollTarget.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            })
+            scrollTo(0, {
+                el: this.scrollTarget,
+            });
         }
     },
 }

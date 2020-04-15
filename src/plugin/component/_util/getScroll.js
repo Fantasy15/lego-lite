@@ -2,7 +2,7 @@
  * @file getScroll.js
  */
 
-export default function getScroll(target, Top) {
+export default function(target, top) {
     const prop = top ? 'pageYOffset' : 'pageXOffset';
     const method = top ? 'scrollTop' : 'scrollLeft';
     const isWindow = target === window;

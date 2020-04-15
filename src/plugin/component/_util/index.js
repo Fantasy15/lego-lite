@@ -3,8 +3,13 @@
  * @description 组建内函数
  */
 
-const debounce = require('lodash/debounce');
+import easings from './easings';
+import getOffSet from './getOffSet';
+import getScroll from './getScroll';
+
 
 export default {
-    debounce
+    // easings,
+    getOffSet,
+    getScroll
 }
