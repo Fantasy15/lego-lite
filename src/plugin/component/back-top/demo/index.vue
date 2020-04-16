@@ -15,5 +15,7 @@ export default {
 </script>
 
 <style lang="less">
-@import './index.less';
+.content {
+    height: 2000px;
+}
 </style>
