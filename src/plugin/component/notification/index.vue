@@ -1,44 +1,58 @@
 <template>
-    <div class="l-notice l-notice-closable">
-        <div class="l-notice-content">
-            <div class>
-                <div class="l-notice-message">{{message}}</div>
-                <div class="l-notice-description">{{description}}</div>
-            </div>
-        </div>
-        <a tabindex="0" class="l-notice-close">
-            <span class="l-close-x">
-                <i
-                    aria-label="icon: close"
-                    class="anticon anticon-close l-close-icon">
-                </i>
-                close
-            </span>
-        </a>
+    <div :class="['app-notification', `app-notification-${placement}`]">
+        <!-- <transition-group name="fade"> -->
+            <Notice
+                v-for="notice in notices"
+                :key="notice.key"
+                :notice="notice"
+                :remove="remove"
+            />
+        <!-- </transition-group> -->
     </div>
 </template>
 
 <script>
+import Notice from './notice.vue';
+
+let seed = 0;
+
 export default {
     name: "notification",
+    components: {Notice},
     props: {
-        duration: {
-            type: Number,
-            default: 4.5
-        },
-        message: String,
-        description: String,
-        onclick: Function
+        placement: String
     },
     data() {
-        return {};
+        return {
+            notices: []
+        };
     },
     mounted() {
     },
     beforeDestroy() {},
-    methods: {}
+    methods: {
+        add(options, type) {
+            const key = `notice_${Date.now()}_${seed++}`;
+            this.notices.push({
+                key,
+                type,
+                ...options,
+            })
+        },
+        remove(key) {
+            const index = this.notices.findIndex((notice) => {
+                return notice.key === key;
+            })
+            if (index > -1) {
+                this.notices.splice(index, 1);
+            }
+        },
+        destory(options) {
+            this.notices = [];
+        }
+    }
 };
 </script>
-<style lang="less" scoped>
+<style lang="less">
 @import './index.less';
 </style>

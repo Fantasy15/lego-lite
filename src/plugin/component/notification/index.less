@@ -1,4 +1,36 @@
-.l-notice {
+.app-notification {
+    position: fixed;
+    z-index: 9;
+    margin: 0 24px 0 0;
+    width: 384px;
+    font-size: 14px;
+    line-height: 1.5;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.65);
+    &.app-notification-topRight {
+        margin-right: 24px;
+        right: 0;
+        top: 24px;
+    }
+    &.app-notification-topLeft {
+        margin-left: 24px;
+        left: 0;
+        top: 24px;
+    }
+    &.app-notification-bottomRight {
+        margin-right: 24px;
+        right: 0;
+        bottom : 24px;
+    }
+    &.app-notification-bottomLeft {
+        margin-left: 24px;
+        left: 0;
+        bottom : 24px;
+    }
+}
+
+
+.app-notice {
     position: relative;
     margin-bottom: 16px;
     padding: 16px 24px;
@@ -7,4 +39,68 @@
     background: #fff;
     border-radius: 4px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+    .app-notice-message {
+        margin-bottom: 8px;
+        padding-right: 24px;
+        font-size: 16px;
+        line-height: 24px;
+        color: rgba(0, 0, 0, 0.85);
+    }
+
+    .app-notice-close {
+        position: absolute;
+        top: 16px;
+        right: 22px;
+        color: rgba(0, 0, 0, 0.45);
+        outline: none;
+        cursor: pointer;
+    }
+}
+
+.fade-effect() {
+    animation-duration: .3s;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+}
+
+.fade-enter {
+    opacity: 0;
+    .fade-effect();
+    animation-play-state: paused;
+}
+
+.fade-leave {
+    .fade-effect();
+    animation-play-state: paused;
+}
+
+.fade-enter.fade-enter-active {
+    animation-name: fadeIn;
+    animation-play-state: running;
+}
+
+.fade-leave.fade-leave-active {
+    animation-name: fadeOut;
+    animation-play-state: running;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
