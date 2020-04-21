@@ -19,6 +19,9 @@ module.exports = () => {
                 filename: `./index.html`,
                 template: path.resolve(`./public/index.html`),
             })
-        ]
+        ],
+        performance: {
+            hints: false
+        }
     });
 };

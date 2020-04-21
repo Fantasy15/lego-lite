@@ -17,6 +17,9 @@ module.exports = () => {
         mode: 'production',
         plugins: [
             new CleanWebpackPlugin(),
-        ]
+        ],
+        performance: {
+            hints: 'warning'
+        }
     })
 }

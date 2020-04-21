@@ -4,10 +4,10 @@
  */
 
 const path = require('path');
-const HtmlWebPackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const IconFontPlugin = require('icon-font-loader').Plugin;
 const babelConfig = require('./babel.config');
+const WebpackBar = require('webpackbar');
 
 module.exports = (env) => {
 
@@ -76,6 +76,7 @@ module.exports = (env) => {
         plugins: [
             new IconFontPlugin(),
             new VueLoaderPlugin(),
+            new WebpackBar()
         ],
         resolve: {
             // 配置别名，在项目中可缩减引用路径，大写防止混淆
@@ -85,8 +86,9 @@ module.exports = (env) => {
                 Http: path.resolve(`src/http`)
             }
         },
-        performance: {
-            hints: false
+        stats: {
+            children: false,
+            modules: false
         }
     }
 }
