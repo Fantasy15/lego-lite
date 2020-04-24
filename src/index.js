@@ -7,7 +7,7 @@ import Vue from 'vue';
 import App from './app.vue';
 import router from './route';
 
-import plugin from './plugin';
+import plugin from './component';
 
 Vue.use(plugin)
 
