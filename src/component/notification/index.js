@@ -32,13 +32,13 @@ function action(options, type) {
         return;
     }
 
-    getNotification(options, type, (intance) => {
+    getNotification(options, (intance) => {
         // 首次挂载后缓存该实例
         notcieInstance[options.placement] = intance;
     })
 }
 
-function getNotification(options, type, cb) {
+function getNotification(options, cb) {
     let $div = document.createElement($div);
     document.body.appendChild($div);
 
