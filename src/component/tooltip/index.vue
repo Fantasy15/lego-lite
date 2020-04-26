@@ -7,15 +7,12 @@
     </div>
 </template>
 <script>
+import {alignElement} from 'dom-align';
+
 export default {
     name: 'popup',
     props: {
         title: String
-    },
-    created() {
-        console.log(this.$props);
-    },
-    methods: {
     },
 }
 </script>
