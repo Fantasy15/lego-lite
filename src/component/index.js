@@ -5,7 +5,7 @@
 import 'animate.css';
 import loading from './loading/index.vue';
 import backTop from './back-top/index.vue';
-import tooltip from './tooltip/index.vue';
+import tooltip from './tooltip/index.js';
 import notification from './notification';
 
 const components = {

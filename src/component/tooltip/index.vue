@@ -1,24 +1,21 @@
+<template>
+    <div class="tooltip-container">
+        <div class="tooltip">
+            <div class="tooltip-arrow"></div>
+            <div class="tooltip-inner">{{title}}</div>
+        </div>
+    </div>
+</template>
 <script>
 export default {
-    name: 'tooltip',
+    name: 'popup',
     props: {
         title: String
     },
-    data() {
-        return {
-            visiable: false
-        }
-    },
-    mounted() {
-        this.renderComponents();
+    created() {
+        console.log(this.$props);
     },
     methods: {
-        renderComponents() {
-
-        }
-    },
-    render() {
-        return this.$slots.default;
     },
 }
 </script>
