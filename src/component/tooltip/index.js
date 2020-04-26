@@ -15,6 +15,12 @@ export default {
         this.renderContainer();
     },
     methods: {
+        onMouseenter() {
+            console.log('enter');
+        },
+        onMouseleave() {
+            console.log('leave');
+        },
         renderContainer() {
             let $div = document.createElement('div');
             document.body.appendChild($div);
@@ -25,11 +31,11 @@ export default {
             }
 
             let self = this;
-
             new Vue({
                 el: $div,
                 mounted() {
                     this.$nextTick(() => {
+                        // 设置tooltip position
                         let source = this.$refs.popupInstance.$el;
                         let target = self.$el;
                         let config = {
@@ -37,7 +43,7 @@ export default {
                             points: ['bc', 'tc'],
                             overflow: {adjustX: true, adjustY: true},
                         }
-                        let result = alignElement(source, target, config);
+                        alignElement(source, target, config);
                     })
                 },
                 render() {
@@ -46,7 +52,13 @@ export default {
             })
         }
     },
-    render() {
+    render(h) {
+        let context = {
+            on: {
+                mouseenter: this.onMouseenter,
+                mouseleave: this.onMouseleave
+            }
+        }
         return this.$slots.default;
     },
 }

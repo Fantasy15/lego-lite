@@ -14,6 +14,11 @@ export default {
     props: {
         title: String
     },
+    data() {
+        return {
+            visiable: false
+        }
+    }
 }
 </script>
 <style lang="less">
