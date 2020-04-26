@@ -82,7 +82,7 @@ module.exports = (env) => {
             // 配置别名，在项目中可缩减引用路径，大写防止混淆
             alias: {
                 Assets: path.resolve(`src/assets`),
-                Component: path.resolve(`src/plugin/component`),
+                Component: path.resolve(`src/component`),
                 Http: path.resolve(`src/http`)
             }
         },
