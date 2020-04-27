@@ -4,6 +4,7 @@
  */
 import Vue from 'vue';
 import Popup from './index.vue'
+import Test from './test';
 import { alignElement } from 'dom-align';
 
 export default {
@@ -11,10 +12,18 @@ export default {
     props: {
         title: String
     },
+    data() {
+        return {
+            visiable: false,    
+        }
+    },
     mounted() {
         this.renderContainer();
     },
     methods: {
+        onClick() {
+            console.log('click');
+        },
         onMouseenter() {
             console.log('enter');
         },
@@ -26,7 +35,10 @@ export default {
             document.body.appendChild($div);
 
             let context = {
-                props: this.$props,
+                props: {
+                    ...this.$props,
+                    visiable: this.visiable
+                },
                 ref: 'popupInstance'
             }
 
@@ -59,6 +71,12 @@ export default {
                 mouseleave: this.onMouseleave
             }
         }
-        return this.$slots.default;
+        // return h(this.$slots.default[0], context);
+        return (
+            <Test
+                onClick={this.onClick}>
+                {this.$slots.default}
+            </Test>
+        )
     },
 }
