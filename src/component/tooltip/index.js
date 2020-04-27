@@ -3,9 +3,9 @@
  * @description tooltip组件入口
  */
 import Vue from 'vue';
-import Popup from './index.vue'
-import Test from './test';
-import { alignElement } from 'dom-align';
+import Popup from './index.vue';
+
+import ContainerRender from '../_util/containerRender';
 
 export default {
     name: 'tooltip',
@@ -14,69 +14,73 @@ export default {
     },
     data() {
         return {
-            visiable: false,    
+            visiable: false,
         }
     },
     mounted() {
         this.renderContainer();
     },
     methods: {
-        onClick() {
-            console.log('click');
+        getTarget() {
+            return this.$el;
         },
         onMouseenter() {
-            console.log('enter');
+            this.popupInstance.onMouseenter();
         },
         onMouseleave() {
-            console.log('leave');
+            this.popupInstance.onMouseleave();
         },
         renderContainer() {
-            let $div = document.createElement('div');
-            document.body.appendChild($div);
+            if (!this._component) {
+                let $div = document.createElement('div');
+                this.componentEl = $div;
+                document.body.appendChild($div);
 
-            let context = {
-                props: {
-                    ...this.$props,
-                    visiable: this.visiable
-                },
-                ref: 'popupInstance'
-            }
-
-            let self = this;
-            new Vue({
-                el: $div,
-                mounted() {
-                    this.$nextTick(() => {
-                        // 设置tooltip position
-                        let source = this.$refs.popupInstance.$el;
-                        let target = self.$el;
-                        let config = {
-                            offset: [0, -4],
-                            points: ['bc', 'tc'],
-                            overflow: {adjustX: true, adjustY: true},
-                        }
-                        alignElement(source, target, config);
-                    })
-                },
-                render() {
-                    return <Popup {...context} />
+                let context = {
+                    props: {
+                        ...this.$props,
+                        visiable: this.visiable,
+                        getTarget: this.getTarget,
+                    },
+                    ref: 'popupInstance'
                 }
-            })
+
+                let self = this;
+
+                this._component = new Vue({
+                    el: $div,
+                    mounted() {
+                        this.$nextTick(() => {
+                            self.popupInstance = this.$refs.popupInstance;
+                        })
+                    },
+                    methods: {
+                        forceRender() {
+
+                        }
+                    },
+                    render() {
+                        return <Popup {...context} />
+                    }
+                })
+            } else {
+                this._component.forceRender();
+            }
         }
     },
-    render(h) {
+    render() {
         let context = {
             on: {
                 mouseenter: this.onMouseenter,
                 mouseleave: this.onMouseleave
             }
         }
-        // return h(this.$slots.default[0], context);
-        return (
-            <Test
-                onClick={this.onClick}>
-                {this.$slots.default}
-            </Test>
-        )
+        // 需要主动为 VNODE 添加事件,后续考虑添加 clone 方法
+        this.$slots.default[0].data.on = context.on;
+        return this.$slots.default;
+
+        // return <ContainerRender>
+        //         ${this.$slots.default}
+        //         </ContainerRender>
     },
 }

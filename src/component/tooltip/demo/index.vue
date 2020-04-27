@@ -1,7 +1,10 @@
 <template>
     <div>
         <tooltip :title="'这是一段文章标题描述'">
-            <div class="text">这是一个文章标题</div>
+            <span class="text">这是一个文章标题</span>
+        </tooltip>
+        <tooltip :title="'这是一段文章标题描述'">
+            <span class="text">这是一个文章标题</span>
         </tooltip>
     </div>
 </template>
@@ -9,7 +12,7 @@
 export default {
     name: 'demo',
     mounted() {
-        
+
     }
 }
 </script>
