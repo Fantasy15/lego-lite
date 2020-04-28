@@ -40,7 +40,7 @@ export default {
             let config = {
                 ignoreShake: true,
                 offset: [0, 0],
-                points: ['bc', 'tc'],
+                points: ['tc', 'bc'],
                 overflow: {adjustX: true, adjustY: true},
                 targetOffset: [0, 0],
             }
