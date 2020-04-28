@@ -5,8 +5,6 @@
 import Vue from 'vue';
 import Popup from './index.vue';
 
-import ContainerRender from '../_util/containerRender';
-
 export default {
     name: 'tooltip',
     props: {
@@ -31,9 +29,7 @@ export default {
             this.popupInstance.onMouseleave();
         },
         renderContainer() {
-            if (!this._component) {
                 let $div = document.createElement('div');
-                this.componentEl = $div;
                 document.body.appendChild($div);
 
                 let context = {
@@ -47,7 +43,7 @@ export default {
 
                 let self = this;
 
-                this._component = new Vue({
+                new Vue({
                     el: $div,
                     mounted() {
                         this.$nextTick(() => {
@@ -63,9 +59,7 @@ export default {
                         return <Popup {...context} />
                     }
                 })
-            } else {
-                this._component.forceRender();
-            }
+            
         }
     },
     render() {

@@ -1,10 +1,10 @@
 <template>
+    <!-- <transition name="zoom" appear> -->
     <div
         v-show="visiable"
         class="tooltip-container"
         @mouseenter="onMouseenter"
         @mouseleave="onMouseleave">
-        <div class="tooltip-arrow"></div>
         <div class="tooltip-inner">{{title }}</div>
     </div>
 </template>
