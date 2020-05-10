@@ -1,10 +1,10 @@
 <template>
     <div class="content">
         <h1>content</h1>
-        <back-top
+        <le-back-top
             :visibilityHeight="300">
             <!-- <div>返回顶部</div> -->
-        </back-top>
+        </le-back-top>
     </div>
 </template>
 

@@ -8,8 +8,7 @@
     },
     "scripts": {
         "dev": "webpack-dev-server --config build/webpack.config.dev.js",
-        "build-test": "webpack --config build/webpack.config.test.js",
-        "build-online": "webpack --config build/webpack.config.online.js",
+        "build": "webpack --config build/webpack.config.online.js",
         "build-sh": "sh script/build.sh"
     },
     "repository": {

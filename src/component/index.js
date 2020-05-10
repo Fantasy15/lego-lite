@@ -3,21 +3,23 @@
  */
 
 import 'animate.css';
-import loading from './loading/index.vue';
-import backTop from './back-top/index.vue';
-import tooltip from './tooltip/index.js';
+import BackTop from './back-top';
+import Tooltip from './tooltip';
 import notification from './notification';
 
-const components = {
-    loading,
-    backTop,
-    tooltip
+export {
+    BackTop,
+    Tooltip
 }
 
-export default function(Vue) {
-    for (let key in components) {
-        Vue.component(`${key}`, components[key]);
-    }
+const components = [
+    BackTop,
+    Tooltip
+];
 
-    (Vue.prototype).$notification = notification;
+export default function(Vue) {
+    components.map(component => {
+        Vue.use(component);
+    })
+    Vue.prototype.$notification = notification;
 }

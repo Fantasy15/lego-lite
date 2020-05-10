@@ -1,16 +1,15 @@
 <template>
-    <transition 
+    <transition
         name="fade"
         appear
         enter-active-class="animated fadeIn faster"
-        leave-active-class="animated fadeOut faster"
-        >
+        leave-active-class="animated fadeOut faster">
         <div
             v-if="visible"
-            class="app-back-top"
+            class="le-back-top"
             @click="scrollToTop">
             <slot>
-                <div class="app-back-top-content">UP</div>
+                <div class="le-back-top-content">UP</div>
             </slot>
         </div>
     </transition>
@@ -22,7 +21,7 @@ import scrollTo from '../_util/scrollTo';
 const addEventListener = require('add-dom-event-listener');
 
 export default {
-    name: 'back-top',
+    name: 'le-back-top',
     props: {
         target: Object,
         visibilityHeight: {

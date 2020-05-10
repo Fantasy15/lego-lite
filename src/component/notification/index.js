@@ -65,7 +65,7 @@ function getNotification(options, cb) {
 const api = {};
 
 ['success', 'info', 'warn', 'error', 'open', 'close', 'destory'].forEach(type => {
-    api[type] = function(options) {
+    api[type] = function (options) {
         action(options, type);
     };
 })

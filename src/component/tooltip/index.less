@@ -1,13 +1,11 @@
-.tooltip-container {
+.le-tooltip-container {
     position: absolute;
     padding-top: 4px;
-    // top: 0;
-    // left: 0;
     font-size: 14px;
     line-height: 1.5;
 }
 
-.tooltip-inner {
+.le-tooltip-inner {
     position: relative;
     padding: 6px 8px;
     color: #fff;
@@ -58,33 +56,4 @@
     .effect();
     animation-name: rcTriggerZoomOut;
     animation-play-state: running;
-}
-
-@keyframes rcTriggerZoomIn {
-    0% {
-      opacity: 0;
-    }
-    1% {
-      opacity: 0;
-      transform-origin: 50% 50%;
-      transform: scale(0, 0);
-    }
-    100% {
-      opacity: 1;
-      transform-origin: 50% 50%;
-      transform: scale(1, 1);
-    }
-}
-
-@keyframes rcTriggerZoomOut {
-    0% {
-      opacity: 1;
-      transform-origin: 50% 50%;
-      transform: scale(1, 1);
-    }
-    100% {
-      opacity: 0;
-      transform-origin: 50% 50%;
-      transform: scale(0, 0);
-    }
 }

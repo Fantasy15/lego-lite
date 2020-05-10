@@ -1,13 +1,11 @@
 <template>
-    <div :class="['app-notification', `app-notification-${placement}`]">
-        <!-- <transition-group name="fade"> -->
-            <Notice
-                v-for="notice in notices"
-                :key="notice.key"
-                :notice="notice"
-                :remove="remove"
-            />
-        <!-- </transition-group> -->
+    <div :class="['le-notification', `le-notification-${placement}`]">
+        <Notice
+            v-for="notice in notices"
+            :key="notice.key"
+            :notice="notice"
+            :remove="remove"
+        />
     </div>
 </template>
 
