@@ -9,6 +9,9 @@ const baseConfig = require('./webpack.config');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
+const args = process.argv;
+const ifAnalyze = args.length >= 5 && args[4] === '--analyze';
+
 module.exports = () => {
     return merge(baseConfig('online'), {
         mode: 'production',
@@ -17,7 +20,7 @@ module.exports = () => {
             library: '[name]'
         },
         plugins: [
-            new BundleAnalyzerPlugin(),
+            ifAnalyze ? new BundleAnalyzerPlugin() : function(){},
             new CleanWebpackPlugin(),
 
         ],
