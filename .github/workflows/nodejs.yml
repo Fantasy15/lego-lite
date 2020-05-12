@@ -27,8 +27,8 @@ jobs:
     - run: npm install
     - run: npm run build
     
-    - name: publish
     - uses: actions/checkout@v2
+    - name: publish
     - uses: actions/setup-node@v1
       with:
         node-version: 12
