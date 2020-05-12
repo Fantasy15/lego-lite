@@ -1,6 +1,6 @@
 {
-    "name": "lego",
-    "version": "1.0.0",
+    "name": "lego-vue",
+    "version": "0.1.0",
     "description": "frontend template",
     "main": "./dist/lego.js",
     "directories": {
