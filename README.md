@@ -1,5 +1,5 @@
 ## WIP 
-## web-template 前端模板项目
+## lego-vue
 
 #### 项目简介
 
