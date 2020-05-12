@@ -2,7 +2,7 @@
     "name": "lego",
     "version": "1.0.0",
     "description": "frontend template",
-    "main": "main.js",
+    "main": "./dist/lego.js",
     "directories": {
         "doc": "doc"
     },
