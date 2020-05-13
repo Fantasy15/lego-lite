@@ -16,7 +16,7 @@ module.exports = () => {
     return merge(baseConfig('online'), {
         mode: 'production',
         entry: {
-            'lego-vue': './src/component/index.js',
+            'lego-vue': './component/index.js',
         },
         output: {
             libraryTarget: 'umd',

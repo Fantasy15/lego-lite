@@ -13,13 +13,13 @@ module.exports = () => {
     return merge(baseConfig('dev'), {
         mode: 'development',
         entry: {
-            'lego-vue': './src/index.js',
+            'lego-vue': './examples/index.js',
         },
         devtool: 'inline-source-map',
         plugins: [
             new HtmlWebPackPlugin({
                 filename: `./index.html`,
-                template: path.resolve(`./public/index.html`),
+                template: path.resolve(`./examples/index.html`),
             })
         ],
         performance: {

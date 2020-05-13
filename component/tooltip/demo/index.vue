@@ -6,9 +6,6 @@
         <le-tooltip :title="'这是一段文章标题描述'">
             <span class="text">这是一个文章标题</span>
         </le-tooltip>
-         <le-tooltip :title="'123'">
-            <div>123</div>
-        </le-tooltip>
     </div>
 </template>
 <<script>

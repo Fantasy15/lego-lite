@@ -4,16 +4,19 @@
 
 import 'animate.css';
 import BackTop from './back-top';
+import Button from './button';
 import Tooltip from './tooltip';
 import notification from './notification';
 
 export {
     BackTop,
+    Button,
     Tooltip
 }
 
 const components = [
     BackTop,
+    Button,
     Tooltip
 ];
 

@@ -8,7 +8,7 @@ import Router from 'vue-router';
 Vue.use(Router)
 
 // 替换成想要测试的组件
-import Test from 'Component/tooltip/demo/index.vue';
+import Test from 'Component/button/demo/index.vue';
 
 export default new Router({
     routes: [
