@@ -65,7 +65,11 @@ export default {
             }
         }
         // 需要主动为 VNODE 添加事件,后续考虑添加 clone 方法
-        this.$slots.default[0].data.on = context.on;
+        if (this.$slots.default[0].data) {
+            this.$slots.default[0].data.on = context.on;
+        } else {
+            this.$slots.default[0].data = context;
+        }
         return this.$slots.default;
     },
 }
