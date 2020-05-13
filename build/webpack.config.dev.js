@@ -4,7 +4,6 @@
  */
 
 const path = require('path');
-const webpack = require('webpack');
 const merge = require('webpack-merge');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const baseConfig = require('./webpack.config');
@@ -13,6 +12,9 @@ const baseConfig = require('./webpack.config');
 module.exports = () => {
     return merge(baseConfig('dev'), {
         mode: 'development',
+        entry: {
+            'lego-vue': './src/index.js',
+        },
         devtool: 'inline-source-map',
         plugins: [
             new HtmlWebPackPlugin({

@@ -15,12 +15,6 @@ module.exports = (env) => {
 
     return {
         context: path.resolve(__dirname, '../'),
-        entry: {
-            'lego-vue': [
-                'babel-polyfill',
-                './src/index.js'
-            ],
-        },
         output: {
             publicPath: '/',
             path: path.resolve(`dist`),

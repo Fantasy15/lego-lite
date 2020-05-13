@@ -15,6 +15,9 @@ const ifAnalyze = args.length >= 5 && args[4] === '--analyze';
 module.exports = () => {
     return merge(baseConfig('online'), {
         mode: 'production',
+        entry: {
+            'lego-vue': './src/component/index.js',
+        },
         output: {
             libraryTarget: 'umd',
             library: '[name]'
