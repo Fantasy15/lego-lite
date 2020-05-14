@@ -3,6 +3,6 @@
 </template>
 <script>
 export default {
-    name: 'le-button'
+    name: 'l-button'
 }
 </script>

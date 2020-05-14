@@ -21,7 +21,7 @@ import scrollTo from '../_util/scrollTo';
 const addEventListener = require('add-dom-event-listener');
 
 export default {
-    name: 'le-back-top',
+    name: 'l-back-top',
     props: {
         target: Object,
         visibilityHeight: {

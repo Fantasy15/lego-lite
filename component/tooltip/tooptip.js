@@ -6,7 +6,7 @@ import Vue from 'vue';
 import Popup from './index.vue';
 
 export default {
-    name: 'le-tooltip',
+    name: 'l-tooltip',
     props: {
         title: String
     },
