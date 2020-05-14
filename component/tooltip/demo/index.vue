@@ -1,11 +1,11 @@
 <template>
     <div>
-        <le-tooltip :title="'这是一段文章标题描述'">
+        <l-tooltip :title="'这是一段文章标题描述'">
             <span class="text">这是一个文章标题</span>
-        </le-tooltip>
-        <le-tooltip :title="'这是一段文章标题描述'">
+        </l-tooltip>
+        <l-tooltip :title="'这是一段文章标题描述'">
             <span class="text">这是一个文章标题</span>
-        </le-tooltip>
+        </l-tooltip>
     </div>
 </template>
 <<script>
