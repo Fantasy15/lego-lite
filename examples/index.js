@@ -3,6 +3,8 @@
  * @description 入口文件
  */
 
+// import '@babel/polyfill';
+
 import Vue from 'vue';
 import App from './app.vue';
 import router from './route';

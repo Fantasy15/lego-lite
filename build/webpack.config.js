@@ -39,7 +39,6 @@ module.exports = (env) => {
                     use: [
                         'style-loader',
                         'css-loader',
-                        'icon-font-loader',
                     ]
                 },
                 {
@@ -47,14 +46,18 @@ module.exports = (env) => {
                     use: [
                         'style-loader',
                         'css-loader',
-                        'icon-font-loader',
-                        'less-loader',
                         {
                             loader: 'postcss-loader',
                             options: {
                                 plugins: [require('autoprefixer')]
                             }
-                        }
+                        },
+                        {
+                            loader: 'less-loader',
+                            options: {
+                                javascriptEnabled: true
+                            }
+                        },
                     ]
                 },
                 {
@@ -76,6 +79,7 @@ module.exports = (env) => {
             // 配置别名，在项目中可缩减引用路径，大写防止混淆
             alias: {
                 Component: path.resolve('./component'),
+                _Style: path.resolve('./component/_style')
             }
         },
         stats: {

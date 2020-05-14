@@ -1,0 +1,42 @@
+.button-size(@height; @padding; @font-size; @border-radius) {
+    height: @height;
+    padding: @padding;
+    font-size: @font-size;
+    border-radius: @border-radius;
+}
+
+.button-color(@color; @background; @border) {
+    color: @color;
+    background-color: @background;
+    border-color: @border;
+}
+
+.button-disabled(@color: @btn-disable-color; @background: @btn-disable-bg; @border: @btn-disable-border) {
+    &-disabled,
+    &.disabled,
+    &[disabled] {
+        &,
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            .button-color(@color; @background; @border);
+            text-shadow: none;
+            box-shadow: none;
+        }
+    }
+}
+
+.button-variant-other(@color; @background; @border) {
+    .button-color(@color; @background; @border);
+  
+    &:hover,
+    &:focus {
+        .button-color(tint(@btn-primary-bg, 20%), @background, tint(@btn-primary-bg, 20%));
+    }
+    &:active,
+    &.active {
+        .button-color(shade(@btn-primary-bg, 5%),  @background, shade(@btn-primary-bg, 5%));
+    }
+    .button-disabled();
+}

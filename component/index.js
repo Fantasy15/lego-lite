@@ -3,6 +3,8 @@
  */
 
 import 'animate.css';
+import './style';
+
 import BackTop from './back-top';
 import Button from './button';
 import Tooltip from './tooltip';

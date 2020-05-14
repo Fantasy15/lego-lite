@@ -3,7 +3,7 @@
  * @description button 组件注册入口
  */
 
-import Button from './button.vue';
+import Button from './button.js';
 import ButtonGroup from './button-group.vue';
 
 Button.install = function(Vue) {

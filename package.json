@@ -23,6 +23,7 @@
     },
     "homepage": "https://github.com/Fantasy15/frontend-template#readme",
     "dependencies": {
+        "@babel/plugin-syntax-jsx": "^7.8.3",
         "@babel/polyfill": "^7.8.7",
         "add-dom-event-listener": "^1.1.0",
         "animate.css": "^3.7.2",
@@ -57,7 +58,7 @@
         "babel-helper-vue-jsx-merge-props": "^2.0.3",
         "babel-loader": "^8.1.0",
         "babel-plugin-syntax-jsx": "^6.18.0",
-        "babel-plugin-transform-vue-jsx": "^3.7.0",
+        "babel-plugin-transform-vue-jsx": "^4.0.1",
         "clean-webpack-plugin": "^3.0.0",
         "dom-align": "^1.11.1",
         "webpack": "^4.43.0"

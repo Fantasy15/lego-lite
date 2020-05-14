@@ -1,0 +1,57 @@
+@import '~_Style/index.less';
+@import '~_Style/themes/index.less';
+@import '~_Style/mixins/index.less';
+@import './mixin.less';
+
+@btn-prefix-cls: ~'@{le-prefix}-btn';
+
+.@{btn-prefix-cls} {
+    position: relative;
+    // display: inline-flex;
+    .button-size(@btn-height-base; @btn-padding-base; @font-size-base; @btn-border-radius-base);
+    line-height: @line-height-base;
+    font-weight: @btn-font-weight;
+    text-align: center;
+    white-space: nowrap;
+    transition: all 0.3s @ease-in-out;
+    .button-color(@btn-default-color, @btn-default-bg, @btn-default-border);
+    border: @btn-border-width @btn-border-style transparent;
+    box-shadow: @btn-shadow;
+    user-select: none;
+    touch-action: manipulation;
+    outline: none;
+    cursor: pointer;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        text-decoration: none;
+        background: @btn-default-bg;
+    }
+
+    &-primary {
+        .button-color(@btn-primary-color, @btn-primary-bg, @btn-primary-color);
+        text-shadow: @btn-text-shadow;
+        box-shadow: @btn-primary-shadow;
+        &:hover,
+        &:focus {
+            .button-color(tint(@btn-primary-color, 20%), tint(@btn-primary-bg, 20%), tint(@btn-primary-color, 20%));
+        }
+    }
+
+    &-danger {
+        .button-color(@btn-danger-color, @btn-danger-bg, @btn-danger-color);
+        text-shadow: @btn-text-shadow;
+        box-shadow: @btn-primary-shadow;
+        &:hover,
+        &:focus {
+            .button-color(tint(@btn-danger-color, 20%), tint(@btn-danger-bg, 20%), tint(@btn-danger-color, 20%));
+        }
+    }
+
+    &-dashed {
+        .button-variant-other(@btn-default-color, @btn-default-bg, @btn-default-border);
+        border-style: dashed;
+    }
+}
