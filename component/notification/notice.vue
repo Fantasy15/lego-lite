@@ -1,13 +1,13 @@
 <template>
-    <div class="app-notice app-notice-closable">
-        <div class="app-notice-content">
+    <div class="le-notice le-notice-closable">
+        <div class="le-notice-content">
             <div class>
-                <div class="app-notice-message">{{notice.message}}</div>
-                <div class="app-notice-description">{{notice.description}}</div>
+                <div class="le-notice-message">{{notice.message}}</div>
+                <div class="le-notice-description">{{notice.description}}</div>
             </div>
         </div>
-        <div class="app-notice-close" @click="remove(notice.key)">
-            <span class="app-close-x">
+        <div class="le-notice-close" @click="remove(notice.key)">
+            <span class="le-close-x">
                 <i
                     aria-label="icon: close"
                     class="anticon anticon-close app-close-icon">
