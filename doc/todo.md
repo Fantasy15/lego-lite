@@ -1,7 +1,8 @@
 ### Todo list
+- update context in component
+- reduce bundle size
 - add transtion util
-- add two or three component
-- make easy-use in project
 - add all normal component
 
+- make easy import/copy in project
 - add react-version
