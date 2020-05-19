@@ -7,6 +7,7 @@
         <div
             v-if="visible"
             class="le-back-top"
+            v-on="$listeners"
             @click="scrollToTop">
             <slot>
                 <div class="le-back-top-content">UP</div>
