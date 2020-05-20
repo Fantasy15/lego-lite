@@ -1,8 +1,9 @@
-### Todo list
-- update context in component
-- reduce bundle size
-- add transtion util
-- add all normal component
+### todo list
+- update button component
+- import single component
 
-- make easy import/copy in project
-- add react-version
+- update grid component
+
+- update layout component
+
+- remove animate.css
