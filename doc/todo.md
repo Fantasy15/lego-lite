@@ -1,9 +1,10 @@
 ### todo list
-- update button component
 - import single component
-
-- update grid component
-
-- update layout component
-
 - remove animate.css
+
+- add grid component
+- add layout component
+
+- add msg component
+
+
