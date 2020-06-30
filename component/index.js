@@ -5,6 +5,7 @@
 import 'animate.css';
 import './style';
 
+import Layout from './layout';
 import BackTop from './back-top';
 import Button from './button';
 import Tooltip from './tooltip';
@@ -17,6 +18,7 @@ export {
 }
 
 const components = [
+    Layout,
     BackTop,
     Button,
     Tooltip

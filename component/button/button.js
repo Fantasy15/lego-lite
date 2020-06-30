@@ -4,7 +4,7 @@
  */
 
 import Wave from '../_util/wave';
-import { configConsumerProps } from '.././_util/configProvider';
+import { configConsumerProps } from '../_util/configProvider';
 
 export default {
     name: 'l-button',
